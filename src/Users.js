@@ -2,7 +2,7 @@ import UserForm from "./component/UserForm";
 import React from 'react';
 import UserTable from "./component/UserTable";
 import { Box } from "@mui/material";
-import SearchAppBar from "./SearchAppBar";
+import Navbar from "./Navbar";
 
 const users = [
     { id: 1, name: 'John Doe', email: 'john@example.com' },
@@ -18,7 +18,7 @@ const Users = () => {
                 margin: 'auto',
             }}
         >
-            <SearchAppBar />
+            <Navbar />
             <UserForm />
             <UserTable rows={users} />
         </Box>

@@ -7,6 +7,9 @@ const UserForm = (props) => {
     const [id, setId] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [contact, setContact] = useState('');
+    const [password, setPassword] = useState('');
+    const [rePassword, setRePassword] = useState('');
     return (
         <Grid 
             container 
@@ -68,7 +71,7 @@ const UserForm = (props) => {
                     width:'100px',
                     fontSize:'16px'
                 }}>
-                    Name
+                    User Name
                 </Typography>
                 <Input 
                     type='text'
@@ -109,22 +112,120 @@ const UserForm = (props) => {
                     onChange={e => setEmail(e.target.value)}
                 />
             </Grid>
-            <Grid item xs={12}>
-                <Button 
-                    variant="contained" 
-                    color="primary"
+            <Grid item xs={12} sm={6} sx={{ display:'flex' }}>
+            <Typography
+                component={'label'}
+                htmlFor='id'
+                sx={{
+                    color: '#000000',
+                    display:'block',
+                    marginRight:'20px',
+                    width:'100px',
+                    fontSize:'16px'
+                }}>
+                Contact
+            </Typography>
+            <Input
+                type='text'
+                id='contact'
+                name='contact'
+                sx={{
+                    color: '#000000',
+                    width:'400px',
+                    fontSize:'16px'
+                }}
+                value={contact}
+                onChange={e => setContact(e.target.value)}
+            />
+        </Grid>
+            <Grid item xs={12} sm={6} sx={{ display:'flex' }}>
+                <Typography
+                    component={'label'}
+                    htmlFor='id'
                     sx={{
-                        backgroundColor: '#1976d2', 
-                        padding: '10px 20px',      
-                        fontSize: '16px',           
-                        borderRadius: '8px',        
-                        '&:hover': {
-                            backgroundColor: '#1565c0', 
-                        }
+                        color: '#000000',
+                        display:'block',
+                        marginRight:'20px',
+                        width:'100px',
+                        fontSize:'16px'
+                    }}>
+                    Password
+                </Typography>
+                <Input
+                    type='password'
+                    id='password'
+                    name='password'
+                    sx={{
+                        color: '#000000',
+                        width:'400px',
+                        fontSize:'16px'
                     }}
-                >
-                    Submit
-                </Button>
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                />
+            </Grid>
+            <Grid item xs={12} sm={6} sx={{ display:'flex' }}>
+                <Typography
+                    component={'label'}
+                    htmlFor='id'
+                    sx={{
+                        color: '#000000',
+                        display:'block',
+                        marginRight:'20px',
+                        width:'100px',
+                        fontSize:'16px'
+                    }}>
+                    Re Password
+                </Typography>
+                <Input
+                    type='password'
+                    id='rePassword'
+                    name='rePassword'
+                    sx={{
+                        color: '#000000',
+                        width:'400px',
+                        fontSize:'16px'
+                    }}
+                    value={rePassword}
+                    onChange={e => setRePassword(e.target.value)}
+                />
+            </Grid>
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        sx={{
+                            backgroundColor: '#1976d2',
+                            padding: '10px 20px',
+                            fontSize: '16px',
+                            borderRadius: '8px',
+                            '&:hover': {
+                                backgroundColor: '#1565c0',
+                            }
+                        }}
+                    >
+                        Add User
+                    </Button>
+                </Grid>
+                <Grid item xs={6}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        sx={{
+                            backgroundColor: '#1976d2',
+                            padding: '10px 20px',
+                            fontSize: '16px',
+                            borderRadius: '8px',
+                            '&:hover': {
+                                backgroundColor: '#1565c0',
+                            }
+                        }
+                    }
+                    >
+                        Update User
+                    </Button>
+                </Grid>
             </Grid>
         </Grid>
     );
